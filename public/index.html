@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Countries API</title>
+    <script type="text/javascript" src="./js/bundle.js">
+
+    </script>
+  </head>
+  <body>
+
+
+ <div id="app">
+   <select v-model="selectedCountry" >
+     <option v-for="country in countries">{{country.name}}</option>
+
+   </select>
+   <h2> Total Population: {{globalPopulation}}</h2>
+   <label>Choose Country:</label>
+
+<input type="text" v-model="selectedCountry">
+
+<div class="country" v-for="country in filteredCountries">
+  <h2>{{country.name}}</h2>
+  <h3>{{country.capital}}</h3>
+  <h3>{{country.borders}}</h3>
+  <img :src="country.flag" alt="">
+</div>
+
+
+
+
+ </div>
+  </body>
+</html>
